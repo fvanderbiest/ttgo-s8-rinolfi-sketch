@@ -253,54 +253,46 @@ void loop() {
     tft.fillRect(0,0, tft.width(), 60, TFT_BLACK);
   }
 
-  if( CO2 < 450 ){
-    tft.setTextColor(TFT_WHITE,TFT_BLACK);
+  if( CO2 <= 600 ){
+    tft.setTextColor(TFT_EXCELLENT,TFT_BLACK);
     if( seuil != 1 ){
       tft.setTextSize(2);
       tft.fillRect(0,61, tft.width(), 25, TFT_BLACK);
-      tft.drawString("Plein air", tft.width() / 2, tft.height() / 2 + 10);
+      tft.drawString("Excellent", tft.width() / 2, tft.height() / 2 + 10);
     }
     seuil = 1;
-  }else if( CO2 >= 450 && CO2 < 600){
-    tft.setTextColor(TFT_GREEN,TFT_BLACK);
+  }else if( CO2 > 600 && CO2 <= 800){
+    tft.setTextColor(TFT_BON,TFT_BLACK);
     if( seuil != 2 ){
       tft.setTextSize(2);
       tft.fillRect(0,61, tft.width(), 25, TFT_BLACK);
-      tft.drawString("Cantine OK", tft.width() / 2, tft.height() / 2 + 10);
+      tft.drawString("Bon", tft.width() / 2, tft.height() / 2 + 10);
     }
     seuil = 2;
-  }else if( CO2 >= 600 && CO2 < 800){
-    tft.setTextColor(TFT_GREEN,TFT_BLACK);
+  }else if( CO2 > 800 && CO2 <= 1000){
+    tft.setTextColor(TFT_MOYEN,TFT_BLACK);
     if( seuil != 3 ){
       tft.setTextSize(2);
       tft.fillRect(0,61, tft.width(), 25, TFT_BLACK);
-      tft.drawString("Classe OK", tft.width() / 2, tft.height() / 2 + 10);
+      tft.drawString("Moyen", tft.width() / 2, tft.height() / 2 + 10);
     }
     seuil = 3;
-  }else if( CO2 >= 800 && CO2 < 1000){
-    tft.setTextColor(TFT_ORANGE,TFT_BLACK);
+  }else if (CO2 > 1000 && CO2 <= 1500){
+    tft.setTextColor(TFT_MEDIOCRE,TFT_BLACK);
     if( seuil != 4 ){
       tft.setTextSize(2);
       tft.fillRect(0,61, tft.width(), 25, TFT_BLACK);
-      tft.drawString("Renouvelez l'air", tft.width() / 2, tft.height() / 2 + 10);
+      tft.drawString("Mediocre", tft.width() / 2, tft.height() / 2 + 10);
     }
     seuil = 4;
-  }else if (CO2 >= 1000 && CO2 < 1500){
-    tft.setTextColor(TFT_RED,TFT_BLACK);
+  }else{
+    tft.setTextColor(TFT_INSUFFISANT,TFT_BLACK);
     if( seuil != 5 ){
       tft.setTextSize(2);
       tft.fillRect(0,61, tft.width(), 25, TFT_BLACK);
-      tft.drawString("Risque Coronavirus", tft.width() / 2, tft.height() / 2 + 10);
+      tft.drawString("Insuffisant", tft.width() / 2, tft.height() / 2 + 10);
     }
     seuil = 5;
-  }else{
-    tft.setTextColor(TFT_RED,TFT_BLACK);
-    if( seuil != 6 ){
-      tft.setTextSize(2);
-      tft.fillRect(0,61, tft.width(), 25, TFT_BLACK);
-      tft.drawString("Quittez la salle", tft.width() / 2, tft.height() / 2 + 10);
-    }
-    seuil = 6;
   }
 
   tft.setTextSize(8);

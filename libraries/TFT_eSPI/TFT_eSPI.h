@@ -254,6 +254,12 @@ const PROGMEM fontinfo fontdata [] = {
 #define TFT_SKYBLUE     0x867D      /* 135, 206, 235 */
 #define TFT_VIOLET      0x915C      /* 180,  46, 226 */
 
+#define TFT_EXCELLENT   0x1C68      /* 27 141 70 to RGB565 */
+#define TFT_BON         0x8DE7      /* 136 188 60 */
+#define TFT_MOYEN       0xFE45      /* 252 202 47 */
+#define TFT_MEDIOCRE    0xEBE4      /* 235 127 32 */
+#define TFT_INSUFFISANT 0xE1A4      /* 226 55 32 */
+
 // Next is a special 16 bit colour value that encodes to 8 bits
 // and will then decode back to the same 16 bit value.
 // Convenient for 8 bit and 16 bit transparent sprites.
